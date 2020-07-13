@@ -57,7 +57,7 @@ export class CustomerListComponent implements OnInit {
     this.customerservice.getCustomer(code)  
       .subscribe(  
         data => {  
-          this.customerlist=data             
+          this.customerlist=[data]            
         },  
         error => console.log(error));  
   }
@@ -84,6 +84,8 @@ export class CustomerListComponent implements OnInit {
    this.customer.address1 = this.Customeraddress1.value;
    this.customer.address2 = this.CustomerAddress2.value;
    this.customer.cts_country = this.CustomerCtsCountry.value;
+   console.log(11111111111111111)
+   console.log(this.customer)
    this.customerservice.updateCustomer(this.customer.code, this.customer).subscribe(  
     data => {       
       this.isupdated=true;  
@@ -124,5 +126,8 @@ export class CustomerListComponent implements OnInit {
   get CustomerCode(){  
     return this.customerupdateform.get('customer_code');  
    }
-
+  
+   changeisUpdate(){  
+    this.isupdated=false;  
+  }  
 }

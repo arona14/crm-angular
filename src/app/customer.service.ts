@@ -21,14 +21,14 @@ export class CustomerService {
   }  
   
   deleteCustomer(code: string): Observable<any> {  
-    return this.http.delete(`${this.baseUrl}/customers/${code}`, { responseType: 'text' });  
+    return this.http.delete(`${this.baseUrl}`+`customers/${code}`, { responseType: 'text' });  
   }  
   
   getCustomer(code: string): Observable<Object> {  
-    return this.http.get(`${this.baseUrl}/customers/${code}`);  
+    return this.http.get(`${this.baseUrl}`+`customers/${code}`);  
   }  
   
   updateCustomer(code: string, value: any): Observable<Object> {  
-    return this.http.post(`${this.baseUrl}/customers/${code}`, value);  
+    return this.http.post(`${this.baseUrl}`+`customers/${code}`, value);  
   }  
 }

@@ -33,14 +33,14 @@
             <tbody>  
                  <tr *ngFor="let customer of customers ">  
                     <td>{{customer.customer_type}}</td>  
-                    <td>{{customer.customer_name}}</td>  
-                    <td>{{customer.customer_agency_id}}</td>
-                    <td>{{customer.customer_interface_id}}</td>
-                    <td>{{customer.customer_address1}}</td>
-                    <td>{{customer.customer_address2}}</td>
-                    <td>{{customer.customer_cts_country}}</td>
-                    <td><button (click)="deleteCustomer(customer.customer_code)" class='btn btn-primary'><i class="fa fa-futboll-0">Delete</i></button>   
-                      <button (click)="updateCustomer(customer.customer_code)" class='btn btn-info'  
+                    <td>{{customer.name}}</td>  
+                    <td>{{customer.agency_id}}</td>
+                    <td>{{customer.interface_id}}</td>
+                    <td>{{customer.address1}}</td>
+                    <td>{{customer.address2}}</td>
+                    <td>{{customer.cts_country}}</td>
+                    <td><button (click)="deleteCustomer(customer.code)" class='btn btn-primary'><i class="fa fa-futboll-0">Delete</i></button>   
+                      <button (click)="updateCustomer(customer.code)" class='btn btn-info'  
                       data-toggle="modal" data-target="#myModal">Update</button>  
                     </td>  
                   </tr>   
@@ -63,34 +63,34 @@
               <div class="modal-body" *ngFor="let customer of customerlist " >  
                   <div [hidden]="isupdated">  
     
-                      <input type="hidden" class="form-control"  formControlName="customer_code" [(ngModel)]="customer.customer_code">  
+                      <input type="hidden" class="form-control"  formControlName="customer_code" [(ngModel)]="customer.code">  
                               <div class="form-group">  
                                   <label for="name">Customer Type</label>  
                                   <input type="text" class="form-control"  formControlName="customer_type" [(ngModel)]="customer.customer_type"  >  
                               </div>  
                               <div class="form-group">  
                                 <label for="name">Name</label>  
-                                <input type="text" class="form-control"  formControlName="customer_name" [(ngModel)]="customer.customer_name"  >  
+                                <input type="text" class="form-control"  formControlName="customer_name" [(ngModel)]="customer.name"  >  
                             </div>
                             <div class="form-group">  
                                 <label for="name">Agency Id</label>  
-                                <input type="text" class="form-control"  formControlName="customer_agency_id" [(ngModel)]="customer.customer_agency_id"  >  
+                                <input type="text" class="form-control"  formControlName="customer_agency_id" [(ngModel)]="customer.agency_id"  >  
                             </div>
                             <div class="form-group">  
                                 <label for="name">Interface Id</label>  
-                                <input type="text" class="form-control"  formControlName="customer_interface_id" [(ngModel)]="customer.customer_interface_id"  >  
+                                <input type="text" class="form-control"  formControlName="customer_interface_id" [(ngModel)]="customer.interface_id"  >  
                             </div>
                             <div class="form-group">  
                                 <label for="name">Address1</label>  
-                                <input type="text" class="form-control"  formControlName="customer_address1" [(ngModel)]="customer.customer_address1"  >  
+                                <input type="text" class="form-control"  formControlName="customer_address1" [(ngModel)]="customer.address1"  >  
                             </div>
                             <div class="form-group">  
                                 <label for="name">Address2</label>  
-                                <input type="text" class="form-control"  formControlName="customer_address2" [(ngModel)]="customer.customer_address2"  >  
+                                <input type="text" class="form-control"  formControlName="customer_address2" [(ngModel)]="customer.address2"  >  
                             </div>
                             <div class="form-group">  
                                 <label for="name">CTS Country</label>  
-                                <input type="text" class="form-control"  formControlName="customer_cts_country" [(ngModel)]="customer.customer_cts_country"  >  
+                                <input type="text" class="form-control"  formControlName="customer_cts_country" [(ngModel)]="customer.cts_country"  >  
                             </div>
                                                    
                     </div>    

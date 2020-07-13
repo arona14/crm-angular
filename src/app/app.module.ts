@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { DataTableModule } from 'angular-datatable'
+//import { DataTableModule } from 'angular-datatable';
+import { DataTablesModule } from 'angular-datatables';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,7 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    DataTableModule,
+    DataTablesModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
