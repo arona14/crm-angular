@@ -1,0 +1,81 @@
+<h3>Create Customer</h3>  
+<div class="row">  
+  <div class="col-sm-4"></div>  
+  <div class="col-sm-4" >  
+    <div [hidden]="submitted" style="width: 400px;">  
+      <form [formGroup]="customersaveform" #savecustomer (ngSubmit)="saveCustomer(saveCustomer)">  
+          <div class="form-group">  
+              <label for="name">Customer Type</label>  
+              <input type="text" class="form-control"  formControlName="customer_type" data-toggle="tooltip"   
+                 data-placement="right" title="Enter Customer Type" >  
+              <div class="alert alert-danger" *ngIf = "(CustomerType.touched) && (CustomerType.invalid)"   
+                style="margin-top: 5px;">  
+                  <span *ngIf="CustomerType.errors.required">Customer Type is Required</span>  
+                    <span *ngIf = "CustomerType.errors.minlength">   
+                        MinLength Error   
+                    </span>                
+                </div>  
+          </div>
+
+          <div class="form-group">  
+            <label for="name">Customer Name</label>  
+            <input type="text" class="form-control"  formControlName="customer_name" data-toggle="tooltip"   
+               data-placement="right" title="Enter Customer Name" >  
+            <div class="alert alert-danger" *ngIf = "(CustomerName.touched) && (CustomerName.invalid)"   
+              style="margin-top: 5px;">  
+                <span *ngIf="CustomerName.errors.required">Customer Name is Required</span>  
+                  <span *ngIf = "CustomerName.errors.minlength">   
+                      MinLength Error   
+                  </span>                     
+              </div>  
+        </div>
+
+        <div class="form-group">  
+            <label for="name">Agency Id</label>  
+            <input type="text" class="form-control"  formControlName="customer_agency_id" data-toggle="tooltip"   
+               data-placement="right" title="Enter Agency Id" >  
+        </div> 
+
+        <div class="form-group">  
+            <label for="name">Interface Id</label>  
+            <input type="text" class="form-control"  formControlName="customer_interface_id" data-toggle="tooltip"   
+               data-placement="right" title="Enter Interface Id" >  
+        </div>
+        
+        <div class="form-group">  
+            <label for="name">Address1</label>  
+            <input type="text" class="form-control"  formControlName="customer_address1" data-toggle="tooltip"   
+               data-placement="right" title="Enter Address1" >  
+        </div>
+
+        <div class="form-group">  
+            <label for="name">Address2</label>  
+            <input type="text" class="form-control"  formControlName="customer_address2" data-toggle="tooltip"   
+               data-placement="right" title="Enter Address2" >  
+        </div>
+
+        <div class="form-group">  
+            <label for="name">CTS Country</label>  
+            <input type="text" class="form-control"  formControlName="customer_cts_country" data-toggle="tooltip"   
+               data-placement="right" title="CTS Country" >  
+        </div>
+
+    
+          
+    
+          <button type="submit" class="btn btn-success">Submit</button>  
+      </form>  
+  </div>  
+  </div>  
+  <div class="col-sm-4"></div>  
+</div>  
+<div class="row">  
+  <div class="col-sm-4"></div>  
+  <div class="col-sm-4">  
+      <div [hidden]="!submitted">  
+         <h4>Customer Added SuccessFully!</h4>  
+         <button (click)="addCustomerForm()" class='btn btn-primary'>Add More Customer</button>  
+      </div>        
+  </div>  
+  <div class="col-sm-4"></div>  
+</div>  
